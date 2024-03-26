@@ -33,10 +33,12 @@ http_archive(
     sha256 = "b3744a4f7a249d5eaf2309daad597631ce77ea62e0fc6abffbab4b4c3dc0fc08"
 )
 
+_RULES_CC_GIT_COMMIT = "f95239adde29680236afa22b4abaf1d04234f61a"
+
 http_archive(
     name = "rules_cc",
-    strip_prefix = "rules_cc-master",
-    urls = ["https://github.com/bazelbuild/rules_cc/archive/master.zip"],
+    strip_prefix = "rules_cc-%s" % _RULES_CC_GIT_COMMIT,
+    urls = ["https://github.com/bazelbuild/rules_cc/archive/%s.tar.gz" % _RULES_CC_GIT_COMMIT],
 )
 
 http_archive(
